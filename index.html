@@ -281,9 +281,12 @@ nav.scrolled{background:rgba(6,8,20,.72); backdrop-filter:blur(16px); border-col
     width:60px;
     height:60px;
     border-radius:50%;
-    background:rgba(10,15,25,.85);
-    backdrop-filter:blur(12px);
-    border:2px solid rgba(45,226,255,.5);
+
+    background:rgba(10,15,25,.40);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
 
     display:flex;
     align-items:center;
@@ -295,11 +298,14 @@ nav.scrolled{background:rgba(6,8,20,.72); backdrop-filter:blur(16px); border-col
     letter-spacing:3px;
 
     color:#2DE2FF;
+
     text-shadow:
         0 0 8px rgba(45,226,255,.8),
         0 0 18px rgba(45,226,255,.5);
 
-    z-index:10;
+    box-shadow:
+        0 0 20px rgba(45,226,255,.18);
+
     transition:.3s ease;
     animation:floatBadge 4s ease-in-out infinite;
 }
