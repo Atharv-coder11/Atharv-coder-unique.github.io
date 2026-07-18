@@ -243,23 +243,50 @@ nav.scrolled{background:rgba(6,8,20,.72); backdrop-filter:blur(16px); border-col
     width:100%;
     height:100%;
     object-fit:cover;
-    object-position:center 18%;
+    object-position:center 12%;
     border-radius:36px;
     display:block;
+    user-select:none;
+    pointer-events:none;
     transition:transform .35s ease;
 }
 
 .hero-portrait:hover .profile-photo{
-    transform:scale(1.05);
+    transform:scale(1.04);
+    filter:brightness(1.05);
+}
+.hero-portrait{
+    box-shadow:
+        0 30px 80px -30px rgba(123,92,250,.5),
+        inset 0 0 50px rgba(0,0,0,.15);
+}
+
+.hero-portrait::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:36px;
+    border:1px solid rgba(45,226,255,.15);
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.28),
+        transparent 45%
+    );
+    pointer-events:none;
 }
 .avatar-badge{
     position:absolute;
-    bottom:18px;
-    right:18px;
-    width:60px;
-    height:60px;
+    bottom:24px;
+    right:24px;
+    width:58px;
+    height:58px;
     border-radius:50%;
-    background:rgba(10,15,25,.85);
+    background:linear-gradient(
+    135deg,
+    rgba(45,226,255,.25),
+    rgba(123,92,250,.35)
+    );
+    backdrop-filter:blur(18px);
     backdrop-filter:blur(12px);
     border:2px solid rgba(45,226,255,.5);
     color:#2DE2FF;
@@ -269,6 +296,16 @@ nav.scrolled{background:rgba(6,8,20,.72); backdrop-filter:blur(16px); border-col
     align-items:center;
     justify-content:center;
     z-index:10;
+    animation:floatBadge 4s ease-in-out infinite;
+}
+@keyframes floatBadge{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-4px);
+    }
 }
 @keyframes scan{0%{top:0%;}100%{top:100%;}}
 .badge-chip{
