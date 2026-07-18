@@ -239,6 +239,48 @@ nav.scrolled{background:rgba(6,8,20,.72); backdrop-filter:blur(16px); border-col
   position:absolute; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--green),transparent);
   animation:scan 3s linear infinite; opacity:.8;
 }
+.hero-portrait .profile-photo{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    border-radius:36px;
+    display:block;
+  }
+
+  .avatar-badge{
+    position:absolute;
+    bottom:18px;
+    right:18px;
+
+    width:64px;
+    height:64px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(10,15,25,.85);
+    backdrop-filter:blur(12px);
+
+    border:2px solid rgba(45,226,255,.5);
+
+    color:#2DE2FF;
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+
+    box-shadow:0 0 20px rgba(45,226,255,.35);
+
+    z-index:5;
+    transition:.3s ease;
+  }
+
+.hero-portrait:hover .avatar-badge{
+    transform:scale(1.08) rotate(-5deg);
+}
 @keyframes scan{0%{top:0%;}100%{top:100%;}}
 .badge-chip{
   position:absolute; padding:8px 14px; border-radius:12px; font-family:var(--font-mono); font-size:11.5px;
@@ -540,14 +582,22 @@ footer .foot-socials{display:flex; justify-content:center; gap:16px; margin-bott
       </div>
     </div>
  
-    <div class="hero-portrait-wrap">
-      <div class="badge-chip b1">🛡 Cyber Security</div>
-      <div class="badge-chip b2">🤖 AI / ML</div>
-      <div class="badge-chip b3">📡 IoT / Pi</div>
-      <div class="hero-portrait" id="heroPortrait">
+      <div class="hero-portrait-wrap">
+        <div class="badge-chip b1">🛡 Cyber Security</div>
+        <div class="badge-chip b2">🤖 AI / ML</div>
+        <div class="badge-chip b3">📡 IoT / Pi</div>
+        <div class="hero-portrait" id="heroPortrait">
         <div class="scan"></div>
-        <!-- Replace this initials block with <img src="your-photo.jpg"> for a real profile photo -->
-        <div class="avatar-initials">AJ</div>
+
+        <img
+          src="images/profile.png"
+          alt="Portrait of Atharv Jamodkar"
+          class="profile-photo"
+        >
+
+        <div class="avatar-badge" aria-hidden="true">
+          AJ
+        </div>
       </div>
     </div>
   </div>
